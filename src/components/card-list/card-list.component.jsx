@@ -1,26 +1,17 @@
-
-import { Component } from "react";
+// no class imports when using functional components
 import "./card-list.styles.css"
 import Card from "../card/card.component"
 
-class CardList extends Component {
+// we change this to an implicit return and use {monsters} as the prop
+const CardList = ({ monsters }) => (
+    // inside a component, you must use ONE parent element, wrap everything inside it, will error otherwise.
+    <div className="card-list">
+      {monsters.map(monster => {
+        return (
+          <Card monster={monster}/>
+        );
+      })}
+    </div>
+  );
 
-  render() {
-  
-    const {monsters} = this.props;
-  
-    return (
-      // inside a component, you must use ONE parent element, wrap everything inside it, will error otherwise.
-      <div className="card-list">
-        {monsters.map(monster => {
-  
-          return (
-            <Card monster={monster}/>
-          );
-        })}
-      </div>
-    );
-  } 
-}
-
-export default CardList;
+export default CardList; 

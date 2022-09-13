@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 // the following code says I want you render whatever you find in the App file
 // at the point of 'root'...
 // the 'root' element is inside the <body> tag in our html!!
-
+// there is a slight difference here in syntax from react 17.0, but it does the same thing.
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 
 
